@@ -1,0 +1,27 @@
+{% from 'form_macro.html' import render_field %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shadow 状态</title>
+</head>
+<body>
+{{message}}
+
+<p>是否在线： {{is_alive}}</p>
+<p>启动时间: {{last_start}}</p>
+<p>最后一次刷新时间: {{last_refresh}}</p>
+<p>刷新时长： {{refresh_period / 60}} minutes</p>
+
+<form method=post action=''>
+    {{ refresh_form.csrf_token }}
+    <dl>
+        {{ render_field(refresh_form.duration) }}
+    </dl>
+    <p><input type=submit value=Register></p>
+</form>
+
+
+
+</body>
+</html>
