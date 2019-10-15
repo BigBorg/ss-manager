@@ -1,1 +1,1 @@
-celery -A modules.shadow.tasks worker -B -s /tmp/celerybeat-schedule --loglevel INFO --concurency=1
+celery -A modules.shadow.tasks worker -B -s /tmp/celerybeat-schedule --loglevel INFO --concurrency=1
